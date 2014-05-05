@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.Iterator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,12 +26,9 @@ public class discourseAction extends ActionSupport
     private String inputSentence;
     private Socket clientSocket;
 
+    private Integer needSegment;
     private String result;
-    private String connWord;
-    private String arg1;
-    private String arg2;
-    private String expRelType;
-    private double expRelProbality;
+    private Paragraph paragraph;
 
     public String getInputSentence() {
         return inputSentence;
@@ -50,35 +48,24 @@ public class discourseAction extends ActionSupport
     public String ajaxDPParse() throws Exception
     {
         clientSocket = new Socket("localhost", 8090);
-
-        //request = request.substring(1);
-
         PrintStream print = new PrintStream(clientSocket.getOutputStream());
-        print.println(this.inputSentence);
+
+        if( this.getNeedSegment() == 1 ) print.println( 1 + this.getInputSentence() );
+        else print.println( 0 + this.getInputSentence() );
 
         BufferedReader bReader = new BufferedReader( new InputStreamReader( clientSocket.getInputStream() ) );
         StringBuilder line = new StringBuilder(bReader.readLine());
-        line.append(bReader.readLine());
+        System.out.println(line);
 
         bReader.close();
         clientSocket.close();
 
-        String result = line.toString();
+        result    = line.toString();
+        paragraph = new Paragraph(result);
 
         //return line.toString().replaceAll("ne=\"nc\"", "ne=\"Nz\"");
 
         return SUCCESS;
-    }
-
-    private void processResult(String resultXML) throws DocumentException
-    {
-        Document domObj  = DocumentHelper.parseText(result);
-        Element paraNode = domObj.getRootElement().element("para");
-
-        Element interSenseNode = paraNode.element("InterSentenceSense");
-        Element crossSenseNode = paraNode.element("CrossSentenceSense");
-
-
     }
 
     public Socket getClientSocket() {
@@ -97,43 +84,19 @@ public class discourseAction extends ActionSupport
         this.result = result;
     }
 
-    public String getConnWord() {
-        return connWord;
+    public Paragraph getParagraph() {
+        return paragraph;
     }
 
-    public void setConnWord(String connWord) {
-        this.connWord = connWord;
+    public void setParagraph(Paragraph paragraph) {
+        this.paragraph = paragraph;
     }
 
-    public String getArg1() {
-        return arg1;
+    public Integer getNeedSegment() {
+        return needSegment;
     }
 
-    public void setArg1(String arg1) {
-        this.arg1 = arg1;
-    }
-
-    public String getArg2() {
-        return arg2;
-    }
-
-    public void setArg2(String arg2) {
-        this.arg2 = arg2;
-    }
-
-    public String getExpRelType() {
-        return expRelType;
-    }
-
-    public void setExpRelType(String expRelType) {
-        this.expRelType = expRelType;
-    }
-
-    public double getExpRelProbality() {
-        return expRelProbality;
-    }
-
-    public void setExpRelProbality(double expRelProbality) {
-        this.expRelProbality = expRelProbality;
+    public void setNeedSegment(Integer needSegment) {
+        this.needSegment = needSegment;
     }
 }

@@ -27,6 +27,12 @@
 }
 
 .long_select{
+    width:300px;
+    border-radius: 5px;
+    font-family:"Microsoft YaHei",SimSun;
+}
+
+.long_select_multi{
     width:450px;
     border-radius: 5px;
     font-family:"Microsoft YaHei",SimSun;
@@ -80,4 +86,12 @@
 .left{
     width: 100%;
     text-align: left;
+}
+
+.imaginaryline
+{
+    border-top: 1px dashed #6ab600;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

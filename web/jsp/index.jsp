@@ -88,7 +88,7 @@
     <!--<img src="./images/banner.png" />-->
     <!--</div>-->
 
-    <div class="download" style=" margin-left:9%;">
+    <div class="download" style=" margin-left:45%;">
         <a href="/corpusDownload.html#download">
             <img src="images/downloadpng1.png" style="height:50px;width:150px;margin-top:20px;">
         </a>

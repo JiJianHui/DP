@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.content .index{
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	line-height:30px;
+	margin-bottom:50px;
+}
+
+.index a{
+    border-bottom: thin dotted;
+    font-size:18px;
+	color:#00C;
+    text-decoration: none;
+}
+
+.index .subIndex{
+	margin-left:50px;
+}
+
+.content{
+    margin-left:20%;
+    width:60%;
+    font-size:14px;
+    font-family:"Microsoft YaHei",SimSun;
+    line-height:30px;
+
+    border-bottom:dotted;
+    border-bottom-width:thin;
+    border-bottom-color:#CCC;
+}
+
+.title{
+    margin-top: 20px;
+}
+
+.title a{
+    font-size:22px;
+    font-weight:bold;
+    color:#060;
+    margin-bottom:0px;
+}
+
+/****************************************************************************/
+/**Corpus Introduction**/
+#corpusIntroduction .title a{
+	font-size:22px;
+	font-weight:bold;
+	color:#060;
+	margin-bottom:0px;
+}
+
+
+#corpusIntroduction .content{
+	margin-top:20px;
+}
+
+
+/****************************************************************************/
+/**Corpus Example**/
+#corpusExample{
+
+}
+#corpusExample .content{
+	margin-top:20px;
+}
+#corpusExample .title a{
+	font-size:22px;
+	font-weight:bold;
+	color:#060;
+	margin-bottom:0px;
+	margin-top:10px;
+}
+
+
+/****************************************************************************/
+/**Corpus Format**/
+#corpusFormat{
+
+}
+#corpusFormat .content{
+	margin-top:20px;
+}
+
+#corpusFormat .title a{
+    font-size:22px;
+    font-weight:bold;
+    color:#060;
+	margin-bottom:0px;
+	margin-top:10px;
+}
+
+/****************************************************************************/
+/****************************************************************************/
+/****************************************************************************/
+/**语料分析*/
+.wordTable{
+    border-width: thin;
+}
+
+
+
+

@@ -1,0 +1,169 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*This is the basic layout css*/
+#root{
+    position: relative;   /*重要！保证footer是相对于wapper位置绝对*/
+    height: auto;          /* 保证页面能撑开浏览器高度时显示正常*/
+    min-height: 100%;  /* IE6不支持，IE6要单独配置*/
+}
+
+#footer{
+    position: absolute;  bottom: 0; /* 关键 */
+    left:0; /* IE下一定要记得 */
+    height: 60px;         /* footer的高度一定要是固定值*/
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#footer a  {
+    color: black;
+    font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.chineseWord{font-family:"Microsoft YaHei",SimSun;}
+
+#container{
+    padding-bottom: 60px; /*重要！给footer预留的空间*/
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {clear:both;}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/**This is the navigation bar css**/
+
+.topNav {
+    /*position:relative;*/
+    z-index:1;
+    height:80px;
+    /*border-top:3px solid #ff8500;*/
+    border-bottom:1px solid #EDEEF0;
+    /*border:1px solid red;*/
+    background-color:#FCFCFC;
+    font-family:"Microsoft YaHei",SimSun;
+    font-size:15px;
+    width:100%;
+    padding-top:-10px;
+
+}
+
+.tnLeft img{height:40px;}
+
+.topNav-width {
+    width:95%;
+    margin:0 auto;
+    padding-top: -10px;
+    margin-top: -10px;
+}
+
+.topNav h3 {
+    font-weight:normal;
+    font-size:100%;
+}
+.topNav dl {
+    zoom:1;
+}
+.topNav .tnLeft {
+    float:left;
+}
+.topNav .tnRight {
+    float:right;
+    /*padding-right:2%;*/
+}
+
+.topNav dd {
+    float:left;
+    position:relative;
+    border: 1px green;
+}
+.topNav dd h3 {
+    float:left;
+}
+.topNav dd h3 a {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    height:14px;
+    line-height:14px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.topNav dd h3 a i {
+    display:inline-block;
+    width:8px;
+    height:5px;
+    /*margin:0 0 0 5px;*/
+    overflow:hidden;
+    vertical-align:middle;
+    font-size:12px;
+    line-height:13px;
+    background:url(/images/icon.png) 0 -61px no-repeat;
+}
+.topNav dd h3 a:hover,.topNav dd.on h3 a {
+    background:#EDEEF0;
+    color:#FF8400;
+}
+
+
+.topNav dd ul {
+    display:none;
+    position:absolute;
+    width:130px;
+    top:55px;
+    left:0;
+    /*border-bottom:1px solid #FECC5B;*/
+    border:1px solid #FECC5B;
+    border-top:0;
+    background:#fff;
+    -moz-box-shadow:3px 3px 3px rgba(0,0,0,.1);
+    -webkit-box-shadow:3px 3px 3px rgba(0,0,0,.1);
+    box-shadow:3px 3px 3px rgba(0,0,0,.1);
+    padding: 0px;
+    margin: 0px;
+}
+.topNav dd ul li {
+    line-height:40px;
+    border-bottom:1px solid #FECC5B;
+    list-style:none;
+    padding-left: 20px;
+    text-align: left;
+}
+.topNav dd ul li a {
+    display:block;
+    color:#333;
+    padding:0 0px;
+    text-decoration: none;
+}
+.topNav dd ul li a:hover {
+    background:#FFF5DA;
+    color:#E67902;
+}
+.topNav dd ul li a span {
+    color:#FF8400;
+    /*margin-left:5px;*/
+}
+
+/*-----------------------------------End of Navigation----------------------------------------------------------*/
+.backToTop{
+    display:none;
+    width:50px;
+    height: 50px;
+    background: #eee url(/images/GoToTop2.png) no-repeat;
+    position:fixed; _position:absolute;
+    right:50px; bottom:100px;
+    cursor:pointer;
+    opacity:.6;
+    filter:Alpha(opacity=60);
+}
+
+
+#root{
+    width: 95%;
+    /*text-align: center;*/
+}

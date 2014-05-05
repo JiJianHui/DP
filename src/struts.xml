@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.action.extension" value="html"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+
+
+    <package name="/" namespace="/" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+
+        <action name="index">
+            <result name="success" type="tiles">.index</result>
+        </action>
+
+        <action name="corpusIntroduction">
+            <result name="success" type="tiles">.corpusIntroduction</result>
+        </action>
+
+        <action name="corpusAnalysis">
+            <result name="success" type="tiles">.corpusAnalysis</result>
+        </action>
+
+        <action name="corpusDownload">
+            <result name="success" type="tiles">.corpusDownload</result>
+        </action>
+
+        <action name="dpParseDemo" class="action.discourseAction" method="dpParseDemo">
+            <result name="success" type="tiles">.demo</result>
+        </action>
+
+        <action name="ajaxDPParse" class="action.discourseAction" method="ajaxDPParse">
+            <result name="success" type="tiles">.dpParseResult</result>
+        </action>
+
+    </package>
+
+</struts>

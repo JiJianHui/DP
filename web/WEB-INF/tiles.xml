@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name=".baseLayout" template="/jsp/layout/layout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="menu"   value="/jsp/layout/menu.jsp"/>
+        <put-attribute name="body"   value="/jsp/layout/menu.jsp"/>
+        <put-attribute name="footer" value="/jsp/layout/footer.jsp"/>
+    </definition>
+
+    <definition name=".index" extends=".baseLayout">
+        <put-attribute name="title"  value="HIT-CDTB"/>
+        <put-attribute name="body"   value="/jsp/index.jsp"/>
+    </definition>
+
+    <definition name=".corpusIntroduction" extends=".baseLayout">
+        <put-attribute name="title"  value="HIT-CDTB Introduction"/>
+        <put-attribute name="body"   value="/jsp/corpusIntroduction.jsp"/>
+    </definition>
+
+    <definition name=".corpusAnalysis" extends=".baseLayout">
+        <put-attribute name="title"  value="HIT-CDTB Analysis"/>
+        <put-attribute name="body"   value="/jsp/corpusAnalysis.jsp"/>
+    </definition>
+
+
+    <definition name=".corpusDownload" extends=".baseLayout">
+        <put-attribute name="title"  value="HIT-CDTB Download"/>
+        <put-attribute name="body"   value="/jsp/corpusDownload.jsp"/>
+    </definition>
+
+    <definition name=".demo" extends=".baseLayout">
+        <put-attribute name="title"  value="HIT-CDTB Demo"/>
+        <put-attribute name="body"   value="/jsp/demo.jsp"/>
+    </definition>
+
+    <definition name=".dpParseResult" extends=".baseLayout">
+        <put-attribute name="title"  value="Demo Result"/>
+        <put-attribute name="body"   value="/jsp/demoResult.jsp"/>
+    </definition>
+
+</tiles-definitions>

@@ -10,6 +10,7 @@ public class CrossSense
 {
     private String type;
     private String relNO;
+    private String relContent;
 
     private String connContent;
     private String arg1Content;
@@ -91,5 +92,13 @@ public class CrossSense
 
     public void setArg2SentID(Integer arg2SentID) {
         this.arg2SentID = arg2SentID;
+    }
+
+    public String getRelContent() {
+        return relContent;
+    }
+
+    public void setRelContent(String relContent) {
+        this.relContent = relContent;
     }
 }

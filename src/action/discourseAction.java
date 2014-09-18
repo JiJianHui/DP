@@ -26,7 +26,7 @@ public class discourseAction extends ActionSupport
     private String inputSentence;
     private Socket clientSocket;
 
-    private Integer needSegment;
+    private Integer needSegment = 1;
     private String result;
     private Paragraph paragraph;
 
@@ -50,6 +50,7 @@ public class discourseAction extends ActionSupport
         clientSocket = new Socket("localhost", 8090);
         PrintStream print = new PrintStream(clientSocket.getOutputStream());
 
+        inputSentence = this.getInputSentence();
         if( this.getNeedSegment() == 1 ) print.println( 1 + this.getInputSentence() );
         else print.println( 0 + this.getInputSentence() );
 
@@ -99,4 +100,6 @@ public class discourseAction extends ActionSupport
     public void setNeedSegment(Integer needSegment) {
         this.needSegment = needSegment;
     }
+
+
 }

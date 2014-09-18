@@ -10,6 +10,24 @@
 
 <link rel="stylesheet" href="/css/demo.css">
 
+<style>
+    table{
+        font-family:"Microsoft YaHei",SimSun;
+        /*border-bottom: 1px dotted green;*/
+        margin-bottom: 15px;
+    }
+    th{
+        color: blue;
+        letter-spacing: 2px;
+        font:bold;
+        font-family:"Microsoft YaHei",SimSun;
+        text-align: right;
+    }
+    td{
+        font-family:"Microsoft YaHei",SimSun;
+    }
+</style>
+
 <div class="contentBody">
 
     <div id="data">
@@ -36,12 +54,12 @@
                 </select>
 
 
-                <s:radio name="needSegment" list="%{#{'1':'需要分词','0':'不需要分词'}}" listKey="key" listValue="value" value="0"/>
+                <s:radio name="needSegment" list="%{#{'1':'需要分词','0':'不需要分词'}}" listKey="key" listValue="value" id="needSegment"/>
 
             </div>
 
 
-            <textarea name="inputSentence" class="inputData" rows="3" id="inputSentence"></textarea>
+            <s:textarea name="inputSentence" cssClass="inputData" rows="3" id="inputSentence" />
             <input type="submit" id="submitData" value="提交"><span class="errorTips" id="inputError"></span>
 
         </form>
@@ -53,40 +71,72 @@
     <div id="showResult">
 
         <div id="interSense">
+            <s:set var="existInterSense" value="0"/>
             <s:iterator value="paragraph.sentences">
 
                 <s:iterator value="interSenses">
-                    <div class="left"><span class="relType">SenseType: </span><s:property value="type" /></div>
-                    <div class="left"><span class="relType">SenseNO: </span><s:property value="relNO" /></div>
+                    <%--<div class="left"><span class="relType">句子内容: </span><s:property value="content" /></div>--%>
+                    <%--<div class="left"><span class="relType">显式/隐式: </span><s:property value="type" /></div>--%>
+                    <%--<div class="left"><span class="relType">关系编号: </span><s:property value="relNO" /><s:property value="relContent" /></div>--%>
 
-                    <div class="left"><span class="connWord">Connective: </span><s:property value="connContent"/></div>
+                    <%--<div class="left"><span class="connWord">连词: </span><s:property value="connContent"/></div>--%>
 
-                    <div class="left"><span class="arg1">Arg1Content:</span> <s:property value="arg1Content" /></div>
-                    <div class="left"><span class="arg2">Arg2Content:</span> <s:property value="arg2Content" /> </div>
+                    <%--<div class="left"><span class="arg1">Arg1Content:</span> <s:property value="arg1Content" /></div>--%>
+                    <%--<div class="left"><span class="arg2">Arg2Content:</span> <s:property value="arg2Content" /> </div>--%>
+                    <%--<s:set var="existInterSense" value="1"/>--%>
+                    <%--<div class="imaginaryline"></div>--%>
 
+                    <table >
+                        <tr>
+                            <th>句子内容:</th>
+                            <td><s:property value="content" /></td>
+                        </tr>
+                        <tr>
+                            <th>显式/隐式:</th>
+                            <td><s:property value="type" /></td>
+                        </tr>
+                        <tr>
+                            <th>关系编号:</th>
+                            <td><s:property value="relNO" /><s:property value="relContent" /></td>
+                        </tr>
+                        <tr>
+                            <th>连词：</th>
+                            <td><s:property value="connContent"/></td>
+                        </tr>
+                        <tr>
+                            <th>语义单元1：</th>
+                            <td><s:property value="arg1Content" /></td>
+                        </tr>
+                        <tr>
+                            <th>语义单元2：</th>
+                            <td><s:property value="arg2Content" /></td>
+                        </tr>
+                    </table>
+                    <div class="imaginaryline"></div>
                 </s:iterator>
 
             </s:iterator>
-
+            <s:if test="existInterSense==0">Sorry, 句子内部不存在句内篇章关系。</s:if>
         </div>
 
-        <div class="imaginaryline"></div>
+        <%--<div class="imaginaryline"></div>--%>
 
         <div id="crossSense">
-
+            <s:set var="existCrossSense" value="0"/>
             <s:iterator value="paragraph.crossSenses">
+                <div class="left"><span class="relType">显式/隐式: </span><s:property value="type" /></div>
+                <div class="left"><span class="relType">关系编号: </span><s:property value="relNO" /><s:property value="relContent" /></div>
 
-                <div class="left"><span class="relType">SenseType: </span><s:property value="type" /></div>
-                <div class="left"><span class="relType">SenseNO: </span><s:property value="relNO" /></div>
-
-                <div class="left"><span class="connWord">Connective: </span><s:property value="connContent"/></div>
+                <div class="left"><span class="connWord">连词: </span><s:property value="connContent"/></div>
 
                 <div class="left"><span class="arg1">Arg1Content:</span> <s:property value="arg1Content" /></div>
                 <div class="left"><span class="arg2">Arg2Content:</span> <s:property value="arg2Content" /></div>
+                <s:set var="existCrossSense" value="1"/>
+                <div class="imaginaryline"></div>
 
             </s:iterator>
+            <s:if test="existCrossSense==0">Sorry, 不存在两个句子间的篇章关系。</s:if>
         </div>
-
     </div>
 
 </div>
@@ -100,8 +150,8 @@
         }else{
             document.getElementById("inputSentence").value = exampleData;
         }
-        document.getElementById("#multiSentences").options[-1].selected = true;
         $("#multiSentences").val("-1");
+        $("input[name=needSegment][value=0]").attr("checked",true);
     }
 
     function getMultiData()
@@ -113,8 +163,8 @@
             document.getElementById("inputSentence").value = exampleData;
         }
         $("#singleSentence").val("-1");
+        $("input[name=needSegment][value=0]").attr("checked",true);
     }
-
     function checkData()
     {
         var inputData = document.getElementById("inputSentence").value;

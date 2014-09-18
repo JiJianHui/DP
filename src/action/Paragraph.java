@@ -50,6 +50,7 @@ public class Paragraph
 
                 interSense.setType(senseNode.attributeValue("type"));
                 interSense.setRelNO(senseNode.attributeValue("NO"));
+                interSense.setRelContent(senseNode.attributeValue("content"));
 
                 Element arg1Node = senseNode.element("arg1");
                 interSense.setArg1Content( arg1Node.getText() );
@@ -80,6 +81,7 @@ public class Paragraph
 
             crossSense.setType( crossNode.attributeValue("type") );
             crossSense.setRelNO( crossNode.attributeValue("NO") );
+            crossSense.setRelContent( crossNode.attributeValue("content"));
 
             Element arg1Node = crossNode.element("arg1");
             crossSense.setArg1Content(arg1Node.getText());

@@ -6,8 +6,10 @@
 
 #showResult{
     border-radius: 15px;
-    height: 400px;
-    border: 1px solid #006400;
+    height:auto!important;
+    height:400px;
+    min-height:400px;
+    /*border: 1px solid #006400;*/
 }
 
 .inputData{
@@ -30,12 +32,16 @@
     width:300px;
     border-radius: 5px;
     font-family:"Microsoft YaHei",SimSun;
+    margin-right: 20px;
 }
 
 .long_select_multi{
     width:450px;
     border-radius: 5px;
     font-family:"Microsoft YaHei",SimSun;
+}
+.long_select_multi option{
+    width: 450px;;
 }
 
 #submitData{

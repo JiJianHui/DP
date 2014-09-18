@@ -10,6 +10,8 @@ public class InterSense {
 
     private String type;
     private String relNO;
+    private String relContent;
+
     private String arg1Content;
     private String arg2Content;
     private String connContent;
@@ -62,5 +64,13 @@ public class InterSense {
 
     public void setRelNO(String relNO) {
         this.relNO = relNO;
+    }
+
+    public String getRelContent() {
+        return relContent;
+    }
+
+    public void setRelContent(String relContent) {
+        this.relContent = relContent;
     }
 }

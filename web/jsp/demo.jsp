@@ -36,7 +36,7 @@
             </select>
 
 
-            <s:radio name="needSegment" list="%{#{'1':'需要分词','0':'不需要分词'}}" listKey="key" listValue="value" value="0"/>
+            <s:radio name="needSegment" list="%{#{'1':'需要分词','0':'不需要分词'}}" listKey="key" listValue="value" id="needSegment"/>
 
         </div>
 
@@ -65,6 +65,7 @@
             document.getElementById("inputSentence").value = exampleData;
         }
         $("#multiSentences").val("-1");
+        $("input[name=needSegment][value=0]").attr("checked",true);
     }
 
     function getMultiData()
@@ -76,6 +77,7 @@
             document.getElementById("inputSentence").value = exampleData;
         }
         $("#singleSentence").val("-1");
+        $("input[name=needSegment][value=0]").attr("checked",true);
     }
 
     function checkData()

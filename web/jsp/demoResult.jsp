@@ -87,30 +87,12 @@
                     <%--<div class="imaginaryline"></div>--%>
 
                     <table >
-                        <tr>
-                            <th>句子内容:</th>
-                            <td><s:property value="content" /></td>
-                        </tr>
-                        <tr>
-                            <th>显式/隐式:</th>
-                            <td><s:property value="type" /></td>
-                        </tr>
-                        <tr>
-                            <th>关系编号:</th>
-                            <td><s:property value="relNO" /><s:property value="relContent" /></td>
-                        </tr>
-                        <tr>
-                            <th>连词：</th>
-                            <td><s:property value="connContent"/></td>
-                        </tr>
-                        <tr>
-                            <th>语义单元1：</th>
-                            <td><s:property value="arg1Content" /></td>
-                        </tr>
-                        <tr>
-                            <th>语义单元2：</th>
-                            <td><s:property value="arg2Content" /></td>
-                        </tr>
+                        <tr><th>句子内容:</th><td><s:property value="content" /></td></tr>
+                        <tr><th>显式/隐式:</th><td><s:property value="type" /></td></tr>
+                        <tr><th>关系编号:</th><td><s:property value="relNO" /><s:property value="relContent" /></td></tr>
+                        <tr><th>连词:</th><td><s:property value="connContent"/></td></tr>
+                        <tr><th>语义单元1:</th><td><s:property value="arg1Content" /></td></tr>
+                        <tr><th>语义单元2:</th><td><s:property value="arg2Content" /></td></tr>
                     </table>
                     <div class="imaginaryline"></div>
                 </s:iterator>
@@ -124,6 +106,16 @@
         <div id="crossSense">
             <s:set var="existCrossSense" value="0"/>
             <s:iterator value="paragraph.crossSenses">
+
+                <table >
+                    <tr><th>显式/隐式:</th><td><s:property value="type" /></td></tr>
+                    <tr><th>关系编号:</th><td><s:property value="relNO" /><s:property value="relContent" /></td></tr>
+                    <tr><th>连词:</th><td><s:property value="connContent"/></td></tr>
+                    <tr><th>语义单元1:</th><td><s:property value="arg1Content" /></td></tr>
+                    <tr><th>语义单元2:</th><td><s:property value="arg2Content" /></td></tr>
+                </table>
+
+                <%--
                 <div class="left"><span class="relType">显式/隐式: </span><s:property value="type" /></div>
                 <div class="left"><span class="relType">关系编号: </span><s:property value="relNO" /><s:property value="relContent" /></div>
 
@@ -131,8 +123,11 @@
 
                 <div class="left"><span class="arg1">Arg1Content:</span> <s:property value="arg1Content" /></div>
                 <div class="left"><span class="arg2">Arg2Content:</span> <s:property value="arg2Content" /></div>
+
                 <s:set var="existCrossSense" value="1"/>
+
                 <div class="imaginaryline"></div>
+                --%>
 
             </s:iterator>
             <s:if test="existCrossSense==0">Sorry, 不存在两个句子间的篇章关系。</s:if>

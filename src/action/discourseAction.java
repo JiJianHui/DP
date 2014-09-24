@@ -44,6 +44,11 @@ public class discourseAction extends ActionSupport
         return  SUCCESS;
     }
 
+    public String aboutus()
+    {
+        return  SUCCESS;
+    }
+
     /**处理分析结果**/
     public String ajaxDPParse() throws Exception
     {

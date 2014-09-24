@@ -42,6 +42,10 @@
             <result name="success" type="tiles">.dpParseResult</result>
         </action>
 
+        <action name="aboutus" class="action.discourseAction" method="aboutus">
+            <result name="success" type="tiles">.aboutus</result>
+        </action>
+
     </package>
 
 </struts>

@@ -44,4 +44,9 @@
         <put-attribute name="body"   value="/jsp/demoResult.jsp"/>
     </definition>
 
+    <definition name=".aboutus" extends=".baseLayout">
+        <put-attribute name="title"  value="About us"/>
+        <put-attribute name="body"   value="/jsp/layout/aboutus.jsp"/>
+    </definition>
+
 </tiles-definitions>

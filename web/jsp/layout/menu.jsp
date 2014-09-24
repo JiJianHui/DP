@@ -53,7 +53,7 @@
                     <li><a href="/corpusDownload.html#projectTitle">课题介绍</a></li>
                     <%--<li><a href="/corpusDownload.html#proMember">人员介绍</a></li>--%>
                     <li><a href="/corpusDownload.html#proPapers">发表文章</a></li>
-                    <li><a href="/corpusDownload.html#aboutus">联系我们</a></li>
+                    <%--<li><a href="/corpusDownload.html#aboutus">联系我们</a></li>--%>
                     <li><a href="http://ir.hit.edu.cn">HIT-SCIR</a></li>
                 </ul>
 

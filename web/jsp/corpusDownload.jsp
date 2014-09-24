@@ -17,7 +17,7 @@
                 <!--<br /><a href="#proMember">2: 项目组主要人员</a>-->
                 <br /><a href="#downloadTitle">2. 语料下载</a>
                 <br /><a href="#proPapers">3. 发表文章</a>
-                <br /><a href="#aboutus">4. 联系我们</a>
+                <%--<br /><a href="#aboutus">4. 联系我们</a>--%>
             </div>
 
             <div class="contentBody">
@@ -91,29 +91,29 @@
                 <br/><br/>
             </div>
 
-            <div id="contractUs">
-                <div class="title"><a name="aboutus">4. 联系我们</a></div>
-                如果您有任何问题，欢迎随时与我们联系。
-                <br/>
+            <%--<div id="contractUs">--%>
+                <%--<div class="title"><a name="aboutus">4. 联系我们</a></div>--%>
+                <%--如果您有任何问题，欢迎随时与我们联系。--%>
+                <%--<br/>--%>
 
-                <br/><b>秦兵（教授、博士生导师）</b>
-                <br/>Homepage：<a href="http://ir.hit.edu.cn/~qinb/" style="border-bottom: thin dotted; text-decoration: none">
-                http://ir.hit.edu.cn/~qinb/</a>
-                <br/>E-mail：qinb@ir.hit.edu.cn
-                <br/>
+                <%--<br/><b>秦兵（教授、博士生导师）</b>--%>
+                <%--<br/>Homepage：<a href="http://ir.hit.edu.cn/~qinb/" style="border-bottom: thin dotted; text-decoration: none">--%>
+                <%--http://ir.hit.edu.cn/~qinb/</a>--%>
+                <%--<br/>E-mail：qinb@ir.hit.edu.cn--%>
+                <%--<br/>--%>
 
-                <br/><b>张牧宇（博士研究生）</b>
-                <br/>Homepage：<a href="http://ir.hit.edu.cn/~myzhang/" style="border-bottom: thin dotted; text-decoration: none">
-                http://ir.hit.edu.cn/~myzhang/</a>
-                <br/>E-mail：myzhang@ir.hit.edu.cn
-                <br/>
+                <%--<br/><b>张牧宇（博士研究生）</b>--%>
+                <%--<br/>Homepage：<a href="http://ir.hit.edu.cn/~myzhang/" style="border-bottom: thin dotted; text-decoration: none">--%>
+                <%--http://ir.hit.edu.cn/~myzhang/</a>--%>
+                <%--<br/>E-mail：myzhang@ir.hit.edu.cn--%>
+                <%--<br/>--%>
 
-                <br/><b>姬建辉（硕士研究生）</b>
-                <br/>Homepage：<a href="http://ir.hit.edu.cn/~jhji/" style="border-bottom: thin dotted; text-decoration: none">
-                http://ir.hit.edu.cn/~jhji/</a>
-                <br/>E-mail：jhji@ir.hit.edu.cn
+                <%--<br/><b>姬建辉（硕士研究生）</b>--%>
+                <%--<br/>Homepage：<a href="http://ir.hit.edu.cn/~jhji/" style="border-bottom: thin dotted; text-decoration: none">--%>
+                <%--http://ir.hit.edu.cn/~jhji/</a>--%>
+                <%--<br/>E-mail：jhji@ir.hit.edu.cn--%>
 
-            </div>
+            <%--</div>--%>
 
         </div> <!--End of content-->
 

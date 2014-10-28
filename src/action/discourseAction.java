@@ -58,6 +58,8 @@ public class discourseAction extends ActionSupport
         inputSentence = this.getInputSentence();
         if( this.getNeedSegment() == 1 ) print.println( 1 + this.getInputSentence() );
         else print.println( 0 + this.getInputSentence() );
+        print.print("EOF\n");
+        print.flush();
 
         BufferedReader bReader = new BufferedReader( new InputStreamReader( clientSocket.getInputStream() ) );
         StringBuilder line = new StringBuilder(bReader.readLine());

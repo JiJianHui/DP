@@ -88,7 +88,7 @@
 
                     <table >
                         <tr><th>句子内容:</th><td><s:property value="content" /></td></tr>
-                        <tr><th>显式/隐式:</th><td><s:property value="type" /></td></tr>
+                        <tr><th>显式/非显式:</th><td><s:property value="type" /></td></tr>
                         <tr><th>关系编号:</th><td><s:property value="relNO" /><s:property value="relContent" /></td></tr>
                         <tr><th>连词:</th><td><s:property value="connContent"/></td></tr>
                         <tr><th>Argument1:</th><td><s:property value="arg1Content" /></td></tr>
@@ -108,7 +108,7 @@
             <s:iterator value="paragraph.crossSenses">
 
                 <table >
-                    <tr><th>显式/隐式:</th><td><s:property value="type" /></td></tr>
+                    <tr><th>显式/非显式:</th><td><s:property value="type" /></td></tr>
                     <tr><th>关系编号:</th><td><s:property value="relNO" /><s:property value="relContent" /></td></tr>
                     <tr><th>连词:</th><td><s:property value="connContent"/></td></tr>
                     <tr><th>Argument1:</th><td><s:property value="arg1Content" /></td></tr>
